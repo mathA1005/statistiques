@@ -10,4 +10,5 @@ class Average
 
         return $sum / $count;
     }
+
 }
