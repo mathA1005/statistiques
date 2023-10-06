@@ -1,24 +1,20 @@
 <?php
-namespace math\Statiques\Functions;
-class  Median {
-    public static function calculate(array $numbers): float
-    {
-        // Assurez-vous que le tableau est trié pour calculer la médiane
+namespace Math\Statistiques\Functions;
+class Median {
+    public static function calculate($numbers) {
         sort($numbers);
         $count = count($numbers);
 
-        // Si le nombre d'éléments est impair, la médiane est au milieu du tableau
-        if ($count % 2 !== 0) {
-            $middleIndex = floor($count / 2);
-            return $numbers[$middleIndex];
+        if ($count % 2 === 0) {
+            // Nombre pair d'éléments, moyenne des deux éléments du milieu
+            $middle1 = $numbers[($count / 2) - 1];
+            $middle2 = $numbers[$count / 2];
+            $median = ($middle1 + $middle2) / 2.0; // Utilisation de 2.0 pour forcer le résultat en float
+        } else {
+            // Nombre impair d'éléments, élément du milieu
+            $median = $numbers[($count - 1) / 2];
         }
 
-        // Si le nombre d'éléments est pair, la médiane est la moyenne des deux éléments du milieu
-        $middleIndex1 = ($count - 1) / 2;
-        $middleIndex2 = $middleIndex1 + 1;
-        $median = ($numbers[$middleIndex1] + $numbers[$middleIndex2]) / 2.0;
-
-        return $median;
+        return (float) $median; // Assurez-vous que le résultat est un float
     }
-
 }

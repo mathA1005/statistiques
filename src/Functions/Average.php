@@ -1,6 +1,7 @@
 <?php
 
-namespace math\Statistiques\Functions\Average;
+namespace Math\Statistiques\Functions;
+
 class Average
 {
     public static function calculate(array $numbers): float

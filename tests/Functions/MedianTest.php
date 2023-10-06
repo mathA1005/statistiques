@@ -1,5 +1,5 @@
 <?php
-use math\Statistiques\Functions\Median;
+use Math\Statistiques\Functions\Median;
 
 test('test médiane avec un nombre impair d\'éléments', function () {
     $list = [10, 15, 14, 16, 20];
