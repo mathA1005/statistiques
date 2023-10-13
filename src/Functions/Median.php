@@ -6,15 +6,17 @@ class Median {
         $count = count($numbers);
 
         if ($count % 2 === 0) {
-            // Nombre pair d'éléments, moyenne des deux éléments du milieu
             $middle1 = $numbers[($count / 2) - 1];
             $middle2 = $numbers[$count / 2];
-            $median = ($middle1 + $middle2) / 2.0; // Utilisation de 2.0 pour forcer le résultat en float
+            $median = ($middle1 + $middle2) / 2.0;
         } else {
-            // Nombre impair d'éléments, élément du milieu
             $median = $numbers[($count - 1) / 2];
         }
 
-        return (float) $median; // Assurez-vous que le résultat est un float
+        return (float) $median;
     }
 }
+
+$ananas = [1, 5, 6, 7];
+$medianValue = Median::calculate($ananas);
+echo $medianValue;
